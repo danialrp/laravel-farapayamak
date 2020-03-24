@@ -1,15 +1,6 @@
 .DS_Store
 **/.DS_Store
 composer.lock
-.php_cs.cache
 /vendor/
-public/
-tests/public/
 .idea/
-coverage.xml
-results.xml
-docs/_build
-docs/make.bat
-tests/public/docs/
-tests/resources/**
 .phpunit.result.cache
