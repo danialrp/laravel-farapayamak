@@ -1,6 +1,6 @@
 # Laravel Farapayamak
 
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
 - [Introduction](#introduction)
 - [Installation](#installation)
@@ -22,7 +22,7 @@ By using this package you can send SMS Text Messages through Farapayamak RESTful
 ```bash
 composer require danialpanah/farapayamak
 ```
-**This package supports Laravel auto-discovery feature. If you are using this feature no need further actions required, otherwise follow below steps.**
+**This package supports Laravel auto-discovery feature. If you are using this feature no need any further actions required, otherwise follow below steps.**
 
 * Add the service provider to your `providers[]` array in `config/app.php` in your laravel application: 
 ```php
@@ -64,7 +64,7 @@ FARAPAYAMAK_NUMBER=
 <a name="usage"></a>
 ## Usage
 
-Following are some ways which you can have access to farapayamak plugin:
+Following are some ways which you can have access to farapayamak package:
 ```
 // Importing the class namespaces before using it
 use DanialPanah\Farapayamak\Farapayamak;
@@ -78,12 +78,12 @@ $textMessage = new Farapayamak();
 $response = $textMessage->send($data);
 ```
 
-* Using Facades
+* Using Facades:
 ```
 $response = Farapayamak::send($data);
 ```
 
-* Sending to multiple recipients
+* Sending to multiple recipients:
 ```
 $numbers = ['09121111111', '09132222222', '09153333333'];
 
@@ -98,7 +98,7 @@ $response = Farapayamak::send($data);
 <a name="support-security"></a>
 ## Support & Security
 
-This plugin tested with Laravel 5.8 and it supports Laravel 5.8 or greater.
+This plugin supports Laravel 5.8 or greater.
 * In case of discovering any issues, please create one on the [Issues](https://github.com/danialrp/laravel-farapayamak/issues) section.
 * For contribution, fork this repo and implements your code, then create a PR.
 
