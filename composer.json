@@ -1,0 +1,47 @@
+{
+  "name": "danialpanah/farapayamak",
+  "type": "library",
+  "description": "Laravel Package For Sending Text Messages(SMS) Through Farapayamak API.",
+  "keywords": [
+    "sms",
+    "api",
+    "rest",
+    "web service",
+    "farapayamak",
+    "laravel farapayamak"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Danial Panah",
+      "email": "me@danialrp.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "DanialPanah\\Farapayamak\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "DanialPanah\\Farapayamak\\Tests\\": "tests"
+    }
+  },
+  "require": {
+    "guzzlehttp/guzzle": "^6.5"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^3.8",
+    "phpunit/phpunit": "^8.5"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "DanialPanah\\Farapayamak\\FarapayamakServiceProvider"
+      ],
+      "aliases": {
+        "Farapayamak": "DanialPanah\\Farapayamak\\Facades\\Farapayamak"
+      }
+    }
+  }
+}
