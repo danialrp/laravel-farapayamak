@@ -1,6 +1,7 @@
 # Laravel Farapayamak
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+[![Latest Release on Packagist](https://img.shields.io/packagist/v/danialpanah/farapayamak.svg?style=flat-square)](https://packagist.org/packages/danialpanah/farapayamak)
 
 - [Introduction](#introduction)
 - [Installation](#installation)
@@ -98,7 +99,7 @@ $response = Farapayamak::send($data);
 <a name="support-security"></a>
 ## Support & Security
 
-This plugin supports Laravel 5.8 or greater.
+This package supports Laravel 5.8 or greater.
 * In case of discovering any issues, please create one on the [Issues](https://github.com/danialrp/laravel-farapayamak/issues) section.
 * For contribution, fork this repo and implements your code, then create a PR.
 
