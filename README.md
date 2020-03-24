@@ -23,7 +23,7 @@ By using this package you can send SMS Text Messages through Farapayamak RESTful
 ```bash
 composer require danialpanah/farapayamak
 ```
-**This package supports Laravel auto-discovery feature. If you are using this feature no need any further actions required, otherwise follow below steps.**
+**This package supports Laravel auto-discovery feature. If you are using this feature no need to do any further actions, otherwise follow below steps.**
 
 * Add the service provider to your `providers[]` array in `config/app.php` in your laravel application: 
 ```php
@@ -81,6 +81,8 @@ $response = $textMessage->send($data);
 
 * Using Facades:
 ```
+use DanialPanah\Farapayamak\Facades\Farapayamak;
+
 $response = Farapayamak::send($data);
 ```
 
