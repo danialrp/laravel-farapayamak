@@ -124,7 +124,7 @@ trait FarapayamakRequest
      *
      * @throws Exception
      */
-    private function checkDefaultConfigValues() :void
+    private function checkDefaultConfigValues(): void
     {
         if (empty($this->credentials['username'])) {
             throw new Exception('Farapayamak Username is not set.');
