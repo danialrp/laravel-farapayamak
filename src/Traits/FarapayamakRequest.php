@@ -79,8 +79,6 @@ trait FarapayamakRequest
                 'flash' => $this->flashMessage
             ]
         ];
-
-        $this->checkDefaultConfigValues();
     }
 
     /**
@@ -92,8 +90,8 @@ trait FarapayamakRequest
     private function setCredentials($credentials = null): void
     {
         $this->credentials = [
-            'username' => config('farapayamak.username'),
-            'password' => config('farapayamak.password')
+            'username' => isset($credentials['username']) ? $credentials['username'] : config('farapayamak.username'),
+            'password' => isset($credentials['password']) ? $credentials['password'] : config('farapayamak.password')
         ];
     }
 
@@ -105,7 +103,7 @@ trait FarapayamakRequest
      */
     private function setApiUrl($apiUrl = null): void
     {
-        $this->apiUrl = 'https://rest.payamak-panel.com/api/SendSMS/SendSMS';
+        $this->apiUrl = isset($apiUrl) ? $apiUrl : 'https://rest.payamak-panel.com/api/SendSMS/SendSMS';
     }
 
     /**
@@ -116,7 +114,7 @@ trait FarapayamakRequest
      */
     private function setClient($client = null): void
     {
-        $this->client = new Client();
+        $this->client = isset($client) ? $client : new Client();
     }
 
     /**
@@ -147,6 +145,7 @@ trait FarapayamakRequest
     protected function sendRequest(array $data = [])
     {
         $this->requestConfiguration($data);
+        $this->checkDefaultConfigValues();
 
         try {
             return json_decode($this->client->request('post', $this->apiUrl, $this->httpBodyParams)
