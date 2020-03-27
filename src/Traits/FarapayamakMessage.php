@@ -2,7 +2,8 @@
 
 namespace DanialPanah\Farapayamak\Traits;
 
-trait FarapayamakMessage {
+trait FarapayamakMessage
+{
     /**
      * Message content
      *
@@ -22,7 +23,8 @@ trait FarapayamakMessage {
      */
     public function setRecipients($recipients): void
     {
-        is_array($recipients) ? $this->recipients = (string)implode(',', $recipients) : $this->recipients = $recipients;
+        $recipients = (array)$recipients;
+        $this->recipients = implode(',', $recipients);
     }
 
 
