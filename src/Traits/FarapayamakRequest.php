@@ -51,6 +51,8 @@ trait FarapayamakRequest
      */
     private $fromNumber;
 
+    private $notNullableParams = [];
+
     /**
      * Initial configuration for sending Http request
      *
@@ -78,6 +80,18 @@ trait FarapayamakRequest
                 'text' => $this->text,
                 'flash' => $this->flashMessage
             ]
+        ];
+    }
+
+    /**
+     * Set not nullable array values
+     */
+    private function setNotNullableParams(): void
+    {
+        $this->notNullableParams = [
+            'Farapayamak Username is not set.' => $this->credentials['username'],
+            'Farapayamak Password is not set.' => $this->credentials['password'],
+            'Farapayamak Number is not set.' => $this->fromNumber
         ];
     }
 
@@ -120,18 +134,15 @@ trait FarapayamakRequest
     /**
      * Check default values before sending Http request
      *
+     * @param array $args
      * @throws Exception
      */
-    private function checkDefaultConfigValues(): void
+    private function checkDefaultConfigValues($args = []): void
     {
-        if (empty($this->credentials['username'])) {
-            throw new Exception('Farapayamak Username is not set.');
-        }
-        if (empty($this->credentials['password'])) {
-            throw new Exception('Farapayamak Password is not set.');
-        }
-        if (empty($this->fromNumber)) {
-            throw new Exception('Farapayamak Number is not set.');
+        foreach ($args as $key => $value) {
+            if (empty($value)) {
+                throw new Exception($key);
+            }
         }
     }
 
@@ -145,7 +156,7 @@ trait FarapayamakRequest
     protected function sendRequest(array $data = [])
     {
         $this->requestConfiguration($data);
-        $this->checkDefaultConfigValues();
+        $this->checkDefaultConfigValues($this->notNullableParams);
 
         try {
             return json_decode($this->client->request('post', $this->apiUrl, $this->httpBodyParams)
