@@ -81,8 +81,7 @@ class ClientTest extends TestCase
         $this->expectException(Exception::class);
 
         $this->credentials['username'] = null;
-        $this->checkDefaultConfigValues();
-
+        $this->checkDefaultConfigValues($this->setNotNullableParams());
     }
 
     public function test_password()
@@ -90,8 +89,7 @@ class ClientTest extends TestCase
         $this->expectException(Exception::class);
 
         $this->credentials['password'] = null;
-        $this->checkDefaultConfigValues();
-
+        $this->checkDefaultConfigValues($this->setNotNullableParams());
     }
 
     public function test_from_number()
@@ -99,7 +97,6 @@ class ClientTest extends TestCase
         $this->expectException(Exception::class);
 
         $this->credentials['from'] = null;
-        $this->checkDefaultConfigValues();
-
+        $this->checkDefaultConfigValues($this->setNotNullableParams());
     }
 }
