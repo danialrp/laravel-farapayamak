@@ -54,11 +54,13 @@ class ClientTest extends TestCase
         for ($i = 0; $i < 5; $i++) {
             $phoneNumbers [] = $this->faker->phoneNumber;
         }
-
         $this->setRecipients($phoneNumbers);
         $recipients = (string)implode(',', $phoneNumbers);
-
         $this->assertEquals($this->recipients, $recipients);
+
+        $singleNumber = (string)$this->faker->phoneNumber;
+        $this->setRecipients($singleNumber);
+        $this->assertEquals($this->recipients, $singleNumber);
     }
 
     public function test_api_url()
