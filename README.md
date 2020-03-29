@@ -1,6 +1,6 @@
 # Laravel Farapayamak
 
-[![Build Status](https://travis-ci.org/danialrp/laravel-farapayamak.svg?branch=master?style=flat-square)](https://travis-ci.org/github/danialrp/laravel-farapayamak)
+[![Build Status](https://travis-ci.org/danialrp/laravel-farapayamak.svg?branch=master)](https://travis-ci.org/github/danialrp/laravel-farapayamak)
 [![Latest Release on Packagist](https://img.shields.io/packagist/v/danialpanah/farapayamak.svg?style=flat-square)](https://packagist.org/packages/danialpanah/farapayamak)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
