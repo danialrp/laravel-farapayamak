@@ -1,7 +1,8 @@
 # Laravel Farapayamak
 
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+[![Build Status](https://travis-ci.org/danialrp/laravel-farapayamak.svg?branch=master?style=flat-square)](https://travis-ci.org/github/danialrp/laravel-farapayamak)
 [![Latest Release on Packagist](https://img.shields.io/packagist/v/danialpanah/farapayamak.svg?style=flat-square)](https://packagist.org/packages/danialpanah/farapayamak)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
 - [Introduction](#introduction)
 - [Installation](#installation)
@@ -23,7 +24,7 @@ By using this package you can send SMS Text Messages through Farapayamak RESTful
 ```bash
 composer require danialpanah/farapayamak
 ```
-**This package supports Laravel auto-discovery feature. If you are using this feature no need to do any further actions, otherwise follow below steps.**
+**This package supports Laravel auto-discovery feature. If you are using Laravel 5.8 or greater no need to do any further actions, otherwise follow below steps.**
 
 * Add the service provider to your `providers[]` array in `config/app.php` in your laravel application: 
 ```php
@@ -101,7 +102,7 @@ $response = Farapayamak::send($data);
 <a name="support-security"></a>
 ## Support & Security
 
-This package supports Laravel 5.8 or greater.
+This package supports Laravel 5.1 or greater, 6.x and 7.x
 * In case of discovering any issues, please create one on the [Issues](https://github.com/danialrp/laravel-farapayamak/issues) section.
 * For contribution, fork this repo and implements your code, then create a PR.
 
